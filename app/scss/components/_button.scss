@@ -1,0 +1,43 @@
+.btn {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+
+   &--small {
+      border-radius: 24px;
+      border: 2px solid $blue;
+      height: 48px;
+      padding: 0 14px;
+      font-weight: 400;
+      line-height: 125%;
+      transition: background-color .2s ease-in;
+
+      &:hover {
+         background: $blue;
+      }
+   }
+
+   &--big {
+      height: 72px;
+      max-width: 393px;
+      width: 100%;
+      border-radius: 48px;
+      background: $blue;
+      font-weight: 600;
+      line-height: 133.33%;
+      font-size: 24px;
+      transition: box-shadow .1s ease-in, filter .1s ease-in;
+
+      &:hover {
+         filter: saturate(300%);
+         box-shadow: 0 0px 40px 0 rgba(71, 139, 249, 1);
+      }
+
+      @include media-breakpoint-down (sm) {
+         font-size: 18px;
+         height: 53px;
+         max-width: 300px;
+      }
+   }
+}

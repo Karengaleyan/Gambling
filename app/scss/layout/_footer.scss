@@ -1,0 +1,74 @@
+.footer {
+   max-width: 1920px;
+   margin: 0 auto;
+   padding: 20px 0;
+   border-radius: 64px 64px 0px 0px;
+   border-top: 4px solid var(--main-blue-478-bf-9, #478BF9);
+   border-right: 4px solid var(--main-blue-478-bf-9, #478BF9);
+   border-left: 4px solid var(--main-blue-478-bf-9, #478BF9);
+   background-color: #1E1231;
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+
+   .footer__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 0 25px;
+      line-height: 120%;
+
+      ul {
+         display: flex;
+         justify-content: space-between;
+         max-width: 600px;
+         width: 100%;
+
+         a {
+            transition: color .2s ease-in, border-bottom .2s ease-in;
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+               color: $blue;
+               border-bottom: 1px solid $blue;
+            }
+         }
+
+         li:not(:last-child) {
+            @include media-breakpoint-down (lg) {
+               margin-bottom: 4px;
+            }
+         }
+
+         @include media-breakpoint-up (lg) {
+            margin-right: 20px;
+         }
+
+         @include media-breakpoint-down (lg) {
+            flex-direction: column;
+         }
+
+         @include media-breakpoint-down (sm) {
+            margin-bottom: 20px;
+         }
+      }
+
+      @include media-breakpoint-down (sm) {
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 0 5px;
+      }
+   }
+
+   @include media-breakpoint-down (sm) {
+      font-size: 14px;
+   }
+
+   @include media-breakpoint-down(sm) {
+      border-radius: 50px 50px 0px 0px;
+      border-top: 2px solid var(--main-blue-478-bf-9, #478BF9);
+      border-right: 2px solid var(--main-blue-478-bf-9, #478BF9);
+      border-left: 2px solid var(--main-blue-478-bf-9, #478BF9);
+   }
+}

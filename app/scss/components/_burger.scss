@@ -1,0 +1,118 @@
+.burger {
+   &.active {
+      span {
+         border-radius: 0;
+
+         &:first-child {
+            transform: rotate(45deg) translate(9px, 8px);
+         }
+
+         &:nth-child(2) {
+            opacity: 0;
+         }
+
+         &:nth-child(3) {
+            transform: rotate(-45deg) translate(9px, -8px)
+         }
+
+         &:not(:last-child) {
+            margin-bottom: 9px
+         }
+      }
+   }
+
+   span {
+      background: #fff;
+      transition: transform .3s, opacity .3s;
+      height: 3px;
+      border-radius: 5px;
+      display: block;
+      width: 25px;
+
+      &:not(:last-child) {
+         margin-bottom: 5px;
+      }
+   }
+
+   @include media-breakpoint-up(lg) {
+      display: none;
+   }
+}
+
+.burger__menu {
+   background-color: #110A1D;
+   display: none;
+   padding: 30px 15px 10px 15px;
+   width: 100%;
+   border-radius: 0 0 20px 20px;
+
+   @include media-breakpoint-up(lg) {
+      display: none !important;
+   }
+
+   @include media-breakpoint-down(lg) {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      z-index: 10;
+
+      ul {
+         font-size: 18px;
+         display: flex;
+         flex-direction: column;
+         gap: 5px;
+         cursor: pointer;
+         width: 100%;
+
+         li {
+            border-radius: 28px;
+            border: 2px solid $blue;
+            padding: 13px 20px;
+            width: 300px;
+
+            transition: background-color .2s ease-in;
+
+            &:active {
+               background-color: $blue;
+            }
+
+            @include media-breakpoint-down (sm) {
+               width: 100%;
+            }
+         }
+      }
+   }
+
+   &--btn {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      gap: 5px;
+
+      button {
+         height: 45px;
+         border-radius: 24px;
+         border: 2px solid #9DADF2;
+         background: #1E1231;
+         color: white;
+         padding: 13px 20px;
+         width: 300px;
+         transition: background-color .2s ease-in;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         &:active {
+            background-color: $blue;
+         }
+
+         @include media-breakpoint-down (sm) {
+            width: 100%;
+         }
+      }
+   }
+
+   @include media-breakpoint-down (sm) {
+      padding: 30px 10px 10px 10px;
+   }
+}

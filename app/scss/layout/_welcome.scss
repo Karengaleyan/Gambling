@@ -1,0 +1,182 @@
+.welcome {
+   position: relative;
+   flex-grow: 1;
+   margin-top: 15px;
+   padding-bottom: 110px;
+   padding-top: 95px;
+
+   .container {
+      height: 100%;
+   }
+
+   &__row {
+      min-height: 960px;
+      height: 100%;
+
+      @include media-breakpoint-up(lg) {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      @include media-breakpoint-down (lg) {
+         flex-direction: column;
+      }
+   }
+
+   &__title {
+      max-width: 620px;
+      position: relative;
+
+      &::before {
+         content: '';
+         position: absolute;
+         background-color: #478BF9 0%, rgba(71, 139, 249, 0.40) 100%;
+         opacity: 0.30;
+         filter: blur(130px);
+         z-index: -10;
+         top: -230px;
+         left: 100px;
+         width: 224.458px;
+         height: 966.469px;
+         transform: rotate(-54.311deg);
+
+         @include media-breakpoint-down (lg) {
+            top: -80px;
+            left: 200px;
+            height: 810px;
+         }
+
+         @include media-breakpoint-down (sm) {
+            filter: blur(45px);
+            top: -20px;
+            width: 150px;
+            height: 400px;
+            left: 30%;
+         }
+      }
+
+      @include media-breakpoint-down (lg) {
+         text-align: center;
+         margin: 0 auto 30px;
+      }
+
+      @include media-breakpoint-down (sm) {
+         max-width: 365px;
+      }
+
+      @include media-breakpoint-up (lg) {
+         padding-right: 20px;
+      }
+   }
+
+   &__bg {
+      @include media-breakpoint-up(lg) {
+         height: 100%;
+         display: flex;
+         justify-content: space-between;
+         margin-right: 20px;
+      }
+
+      @include media-breakpoint-down(lg) {
+         margin: 20px -15px 0 -15px;
+      }
+
+      div {
+         height: 100%;
+         flex-grow: 1;
+         width: 104px;
+         background-repeat: repeat-y !important;
+         background-size: 100%;
+
+         @include media-breakpoint-down(lg) {
+            height: 70px;
+            width: 100%;
+            background-repeat: repeat-x !important;
+            background-size: initial;
+         }
+
+         @include media-breakpoint-up(lg) {
+            @media (max-width: 1600px) {
+               width: 50px;
+               background-size: 50px !important;
+            }
+         }
+
+         &:nth-child(1) {
+            background-image: url(../images/lines/1.svg);
+            animation: mymove1 5s linear 1s infinite alternate;
+
+            @include media-breakpoint-down(lg) {
+               background-image: url(../images/lines/1-m.svg);
+               animation: mymove2-m 4s linear 1s infinite alternate;
+            }
+         }
+
+         &:nth-child(2) {
+            background-image: url(../images/lines/2.svg);
+            animation: mymove2 4s linear 1s infinite alternate;
+
+            @include media-breakpoint-up(lg) {
+               margin: 0 16px;
+            }
+
+            @include media-breakpoint-down(lg) {
+               background-image: url(../images/lines/2-m.svg);
+               animation: mymove2-m 4s linear 1s infinite alternate;
+
+            }
+         }
+
+         &:nth-child(3) {
+            background-image: url(../images/lines/3.svg);
+            animation: mymove1 5s linear 1s infinite alternate;
+
+            @include media-breakpoint-down(lg) {
+               background-image: url(../images/lines/3-m.svg);
+               animation: mymove1-m 5s linear 1s infinite alternate;
+            }
+         }
+      }
+
+      @keyframes mymove1 {
+         0% {
+            background-position: 0 -400px;
+         }
+
+         100% {
+            background-position: 0 0;
+         }
+      }
+
+      @keyframes mymove2 {
+         0% {
+            background-position: 0 0;
+         }
+
+         100% {
+            background-position: 0 -400px;
+         }
+      }
+
+      @keyframes mymove1-m {
+         0% {
+            background-position: -400px 0;
+         }
+
+         100% {
+            background-position: 0 0;
+         }
+      }
+
+      @keyframes mymove2-m {
+         0% {
+            background-position: 0 0;
+         }
+
+         100% {
+            background-position: -400px 0;
+         }
+      }
+   }
+}

@@ -1,0 +1,38 @@
+.title {
+   font-size: 96px;
+
+   @media (max-width: 1600px) {
+      font-size: 64px;
+   }
+
+   span {
+      color: $blue;
+   }
+
+   @include media-breakpoint-down (sm) {
+      font-size: 46px;
+      line-height: 110%;
+   }
+}
+
+.subtitle {
+   font-size: 32px;
+   color: rgba(255, 255, 255, 0.60);
+   margin: 24px 0 48px 0;
+
+   @media (max-width: 1600px) {
+      font-size: 24px;
+   }
+
+   @include media-breakpoint-down (sm) {
+      font-size: 20px;
+      line-height: 130%;
+      margin: 12px 0 24px 0;
+   }
+}
+
+.title,
+.subtitle {
+   font-weight: 500;
+   line-height: 100%;
+}
